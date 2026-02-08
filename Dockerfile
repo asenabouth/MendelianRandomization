@@ -68,7 +68,8 @@ RUN useradd -m -s /bin/bash mruser && \
     mkdir -p /workspace && \
     mkdir -p /data && \
     mkdir -p /genotypes && \
-    chown -R mruser:mruser /workspace /data /genotypes
+    mkdir -p /code && \
+    chown -R mruser:mruser /workspace /data /genotypes /code
 
 # Set working directory
 WORKDIR /workspace
