@@ -15,6 +15,8 @@ RUN dnf -y update && \
     dnf -y install epel-release && \
     dnf -y install \
     R \
+    python3 \
+    python3-pip \
     gcc \
     gcc-c++ \
     gcc-gfortran \
@@ -62,6 +64,9 @@ RUN wget --tries=3 --timeout=30 https://yanglab.westlake.edu.cn/software/gcta/bi
     chmod +x /usr/local/bin/gcta64 && \
     cd / && \
     rm -rf gcta-1.95.0-linux-kernel-3-x86_64.zip gcta-1.95.0-linux-kernel-3-x86_64
+
+# Install MR-link-2
+RUN pip3 install --no-cache-dir git+https://github.com/zhwm/MR_link_2.git
 
 # Create a non-root user for running analysis work
 RUN useradd -m -s /bin/bash mruser && \
