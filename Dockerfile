@@ -4,7 +4,7 @@
 FROM --platform=linux/amd64 rockylinux/rockylinux:9
 
 # Set metadata
-LABEL maintainer="senabouth"
+LABEL maintainer="asenabouth"
 LABEL description="Mendelian Randomization software in a Rocky Linux environment"
 LABEL version="2.0"
 
