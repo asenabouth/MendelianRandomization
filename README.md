@@ -1,4 +1,4 @@
-# MendelianRandomizationImg
+# MendelianRandomization
 Docker image for MR analysis. Contains the following:
 
 ## Software
@@ -27,5 +27,8 @@ Bioconductor:
 - S4Vectors
 
 # Bind paths
-- /workspace
-- /data
+- /workspace: Bind path for pipeline outputs
+- /data: Bind path for MR resource files
+- /genotypes: Bind path for PLINK files
+- /code: Bind path for your code
+- /eqtl: Bind path for eQTL summary statistics
