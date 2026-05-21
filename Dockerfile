@@ -100,7 +100,8 @@ RUN useradd -m -s /bin/bash mruser && \
     mkdir -p /data && \
     mkdir -p /genotypes && \
     mkdir -p /code && \
-    chown -R mruser:mruser /workspace /data /genotypes /code && \
+    mkdir -p /eqtl && \
+    chown -R mruser:mruser /workspace /data /genotypes /code /eqtl && \
     chmod 755 /home/mruser
 
 # Install Python packages using pyenv environment
