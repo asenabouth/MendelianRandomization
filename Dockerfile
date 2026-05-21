@@ -4,9 +4,9 @@
 FROM --platform=linux/amd64 rockylinux/rockylinux:9
 
 # Set metadata
-LABEL maintainer="MendelianRandomizationImg"
-LABEL description="Docker image for Mendelian Randomization analysis based on Rocky Linux"
-LABEL version="1.0"
+LABEL maintainer="senabouth"
+LABEL description="Mendelian Randomization software in a Rocky Linux environment"
+LABEL version="2.0"
 
 # Update system, enable CRB, install EPEL, R, and required dependencies in a single layer
 RUN dnf -y update && \
@@ -109,7 +109,7 @@ RUN bash -c 'eval "$(pyenv init --path)" && \
     pip install numpy scipy pandas bitarray pytest duckdb pyarrow rpy2'
 
 # Install MR-link-2
-RUN cd /workspace && \
+RUN cd /opt && \
     git clone https://github.com/adriaan-vd-graaf/mrlink2.git
 
 # Set working directory
@@ -120,7 +120,7 @@ USER mruser
 
 # Use /workspace as runtime home in Singularity
 ENV HOME="/workspace" \
-    PATH="/opt/pyenv/bin:/opt/pyenv/shims:/workspace/mrlink2:${PATH}"
+    PATH="/opt/pyenv/bin:/opt/pyenv/shims:/opt/mrlink2:${PATH}"
 
 # Default command
 CMD ["/bin/bash"]
