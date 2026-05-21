@@ -32,3 +32,6 @@ Bioconductor:
 - /genotypes: Bind path for PLINK files
 - /code: Bind path for your code
 - /eqtl: Bind path for eQTL summary statistics
+
+# Conversion instructions
+
